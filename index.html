@@ -1,97 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nails by Pao - Reserva tu Cita</title>
+  <title>Nails by Pao | Nails Studio Salón</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'metallic-pink': '#e6a8d7',
+            'champagne': '#f3e5d8',
+            'luxury-black': '#1a1a1a',
+          },
+          fontFamily: {
+            'cormorant': ['Cormorant Garamond', 'serif'],
+            'montserrat': ['Montserrat', 'sans-serif'],
+            'allura': ['Allura', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+    .title-font { font-family: 'Playfair Display', serif; }
+    .hero-image { 
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1590845947676-fa2576f401d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    .gallery-item { transition: all 0.3s ease; }
+    .gallery-item:hover { transform: scale(1.03); }
+    .animate-fade-in { animation: fadeIn 1s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .metallic-pink { background-color: #e6a8d7; background-image: linear-gradient(315deg, #e6a8d7 0%, #f3d6e8 74%); }
+    .text-glow { text-shadow: 0 0 6px rgba(243, 229, 216, 0.7), 0 0 12px rgba(243, 229, 216, 0.5); }
+  </style>
 </head>
+<body class="bg-white text-gray-800">
 
-<body class="bg-rose-50">
+  <!-- Navigation -->
+  <!-- ... tu navbar y secciones anteriores se quedan igual ... -->
 
-  <!-- Sección de Reservación -->
-  <section class="py-12 px-4">
-    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-
-      <!-- Columna de formulario -->
-      <div class="lg:w-1/2 animate-fade-in">
-        <div class="bg-white rounded-xl shadow-lg p-8">
-          <h3 class="title-font text-2xl font-bold text-gray-800 mb-6">Reserva tu Cita</h3>
-
-          <!-- FORMULARIO CONECTADO -->
-          <form id="reserva-form" action="https://formspree.io/f/mwpneoyl" method="POST">
-            <div class="mb-4">
-              <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
-              <input type="text" id="name" name="name" required
-                class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
-            </div>
-            <div class="mb-4">
-              <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
-              <input type="email" id="email" name="email" required
-                class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
-            </div>
-            <div class="mb-4">
-              <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono</label>
-              <input type="tel" id="phone" name="phone" required
-                class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
-            </div>
-            <div class="mb-4">
-              <label for="service" class="block text-gray-700 font-medium mb-2">Servicio</label>
-              <select id="service" name="service" required
-                class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
-                <option value="">Selecciona un servicio</option>
-                <option>Esmaltado Semipermanente</option>
-                <option>Nivelación Rubber Base</option>
-                <option>Manicure</option>
-                <option>Pedicure</option>
-                <option>Diseño Personalizado</option>
-              </select>
-            </div>
-            <div class="mb-6">
-              <label for="date" class="block text-gray-700 font-medium mb-2">Fecha y hora</label>
-              <input type="datetime-local" id="date" name="date" required
-                class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
-            </div>
-            <button type="submit"
-              class="w-full bg-rose-300 hover:bg-rose-400 text-black font-bold py-3 px-4 rounded-full transition duration-300">
-              Confirmar Reservación
-            </button>
-          </form>
+  <!-- Contact Section -->
+  <section id="contacto" class="py-20 bg-luxury-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:flex lg:items-center lg:justify-between">
+        <div class="lg:w-1/2 mb-10 lg:mb-0 animate-fade-in">
+          <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-6">Contacto</h2>
+          <p class="text-gray-600 mb-8 leading-relaxed">Estamos ubicados en el corazón de la ciudad, ofreciendo un espacio exclusivo y confortable para tu experiencia de belleza.</p>
+          <!-- Datos de contacto (Dirección, Teléfono, etc.) -->
         </div>
-      </div>
 
-      <!-- Columna de imagen (opcional, ejemplo decorativo) -->
-      <div class="lg:w-1/2">
-        <img src="https://cdn.pixabay.com/photo/2016/03/27/19/37/woman-1284411_1280.jpg" alt="Spa & Uñas"
-          class="rounded-xl shadow-lg">
+        <!-- 🚀 FORMULARIO RESERVA CON FORMSPREE -->
+        <form action="https://formspree.io/f/mwpneoyl" method="POST" class="bg-white rounded-xl shadow-lg p-8 lg:w-1/2">
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+          </div>
+          <div class="mb-4">
+            <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono</label>
+            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+          </div>
+          <div class="mb-4">
+            <label for="service" class="block text-gray-700 font-medium mb-2">Servicio</label>
+            <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+              <option value="">Selecciona un servicio</option>
+              <option>Esmaltado Semipermanente</option>
+              <option>Nivelación Rubber Base</option>
+              <option>Manicure</option>
+              <option>Pedicure</option>
+              <option>Diseño Personalizado</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label for="date" class="block text-gray-700 font-medium mb-2">Fecha y hora</label>
+            <input type="datetime-local" id="date" name="date" required class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+          </div>
+          <button type="submit" class="w-full bg-rose-300 hover:bg-rose-400 text-black font-bold py-3 px-4 rounded-full transition duration-300">
+            Confirmar Reservación
+          </button>
+        </form>
       </div>
-
     </div>
   </section>
 
-  <!-- Script de envío -->
-  <script>
-    const form = document.getElementById("reserva-form");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        alert("✅ Tu reservación fue enviada con éxito. ¡Pronto te contactaremos!");
-        form.reset();
-      } else {
-        alert("❌ Hubo un error al enviar la reservación. Intenta nuevamente.");
-      }
-    });
-  </script>
+  <!-- ... tu mapa, footer y scripts siguen igual ... -->
 
 </body>
-
 </html>
