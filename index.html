@@ -2,50 +2,613 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nails by Pao | Beauty & Spa</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nails by Pao | Nails Studio Salón</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'metallic-pink': '#e6a8d7',
+            'champagne': '#f3e5d8',
+            'luxury-black': '#1a1a1a',
+          },
+          fontFamily: {
+            'cormorant': ['Cormorant Garamond', 'serif'],
+            'montserrat': ['Montserrat', 'sans-serif'],
+            'allura': ['Allura', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Iconos + Fuentes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+    .title-font { font-family: 'Playfair Display', serif; }
+    .hero-image {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('https://images.unsplash.com/photo-1590845947676-fa2576f401d2?auto=format&fit=crop&w=2070&q=80');
+      background-size: cover; background-position: center;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+    }
+    .gallery-item { transition: all .3s ease; }
+    .gallery-item:hover { transform: scale(1.03); }
+    .animate-fade-in { animation: fadeIn 1s ease-in-out; }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:translateY(0)} }
+    .metallic-pink { background-color:#e6a8d7; background-image:linear-gradient(315deg,#e6a8d7 0%,#f3d6e8 74%); }
+    .text-glow { text-shadow: 0 0 6px rgba(243,229,216,.7), 0 0 12px rgba(243,229,216,.5); }
+  </style>
 </head>
-<body>
-  <header>
-    <h1>Bienvenida a Nails by Pao</h1>
-  </header>
+<body class="bg-white text-gray-800">
 
-  <main>
-    <section>
-      <h2>Sobre mí</h2>
-      <p>Manicura, pedicura y spa en Nicoya, Guanacaste. Servicio profesional con detalles únicos.</p>
-    </section>
+  <!-- NAV -->
+  <nav class="fixed w-full bg-luxury-black/90 backdrop-blur-sm z-50 transition-all duration-300 border-b border-champagne/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Marca -->
+        <div class="flex items-center">
+          <img src="imgs/logo.png" alt="Logo Nails by Pao" class="h-12 w-12 rounded-full mr-3 border-2 border-champagne shadow-lg">
+          <div class="font-allura text-4xl text-champagne text-glow">Nails by Pao</div>
+        </div>
 
-    <section>
-      <h2>Servicios</h2>
-      <p>Conoce nuestras opciones de manicure, pedicure, spa y diseños especiales.</p>
-    </section>
+        <!-- Menú escritorio -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-center space-x-8">
+            <a href="#inicio" class="text-rose-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+            <a href="#sobre-mi" class="text-rose-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sobre Mí</a>
+            <a href="#servicios" class="text-rose-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Servicios</a>
+            <a href="#galeria" class="text-rose-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Galería</a>
+            <a href="#promociones" class="text-rose-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Promociones</a>
+            <a href="#contacto" class="text-rose-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
+          </div>
+        </div>
 
-    <section>
-      <h2>Promociones</h2>
-      <p>Descubre nuestras ofertas especiales en manicura, pedicura y spa.</p>
-    </section>
-
-    <section>
-      <h2>Visítanos</h2>
-      <!-- Map Section -->
-      <div class="h-96 w-full">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.314132939195!2d-85.45312332509828!3d10.150551689951258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f9fa3fef42cfe4d%3A0x7f1b08d23e2c50b2!2sNicoya%2C%20Guanacaste!5e0!3m2!1ses-419!2scr!4v1692291234567"
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <!-- Botón menú móvil -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-rose-200 hover:text-white focus:outline-none" aria-label="Abrir menú">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Nails by Pao - Nicoya, Guanacaste</p>
+      <!-- Menú móvil (faltaba) -->
+      <div id="mobile-menu" class="md:hidden hidden pb-4">
+        <div class="space-y-1">
+          <a href="#inicio" class="block px-3 py-2 text-rose-200 hover:text-white">Inicio</a>
+          <a href="#sobre-mi" class="block px-3 py-2 text-rose-200 hover:text-white">Sobre Mí</a>
+          <a href="#servicios" class="block px-3 py-2 text-rose-200 hover:text-white">Servicios</a>
+          <a href="#galeria" class="block px-3 py-2 text-rose-200 hover:text-white">Galería</a>
+          <a href="#promociones" class="block px-3 py-2 text-rose-200 hover:text-white">Promociones</a>
+          <a href="#contacto" class="block px-3 py-2 text-rose-200 hover:text-white">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero-image h-screen flex items-center justify-center text-center relative pt-20">
+    <div class="absolute inset-0 bg-gradient-to-t from-luxury-black via-luxury-black/70 to-metallic-pink/20"></div>
+    <div class="z-10 px-4 animate-fade-in">
+      <div class="mb-8">
+        <img src="imgs/logo.png" alt="Logo Nails by Pao" class="mx-auto h-24 w-24 rounded-full object-cover shadow-xl mb-2">
+        <div class="text-center text-champagne text-opacity-80 mb-2">NAIL STUDIO SALON</div>
+      </div>
+      <h1 class="font-cormorant text-5xl md:text-7xl font-bold text-champagne mb-6 tracking-tight">Elegancia en Cada Detalle</h1>
+      <p class="font-montserrat text-xl md:text-2xl text-champagne/80 mb-8 max-w-2xl mx-auto">Transformamos tus uñas en obras de arte con los más altos estándares de calidad.</p>
+      <a href="#contacto" class="bg-champagne hover:bg-champagne/90 text-luxury-black font-bold py-4 px-10 rounded-sm transition duration-300 transform hover:scale-105 inline-flex items-center border border-champagne/30">
+        Agendá tu cita <i class="fas fa-gem ml-3"></i>
+      </a>
+    </div>
+    <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+      <a href="#sobre-mi" class="text-white animate-bounce">
+        <i class="fas fa-chevron-down text-2xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="py-20 bg-gradient-to-b from-white to-rose-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:flex lg:items-center lg:justify-between">
+        <div class="lg:w-1/2 mb-10 lg:mb-0 animate-fade-in">
+          <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-6">Sobre Mí</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">Hola, soy Paola, apasionada por el arte de las uñas desde hace más de 8 años. Mi misión es brindarte no solo un servicio de belleza, sino una experiencia de relajación y cuidado personal.</p>
+          <p class="text-gray-600 mb-6 leading-relaxed">En Nails by Pao utilizamos productos de la más alta calidad y técnicas innovadoras para garantizar resultados duraderos y saludables para tus uñas. Cada cliente recibe atención personalizada según sus necesidades y estilo.</p>
+          <div class="flex items-center">
+            <div class="mr-4 text-rose-300"><i class="fas fa-award text-3xl"></i></div>
+            <div>
+              <h4 class="font-bold text-gray-800">Certificaciones</h4>
+              <p class="text-gray-600">Técnicas avanzadas en esmaltado semipermanente y nivelación</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-center animate-fade-in">
+          <div class="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-rose-200 shadow-xl">
+            <img src="imgs/logo.png" alt="Paola - Nails by Pao" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestros Servicios</h2>
+        <div class="w-20 h-1 bg-rose-300 mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Cards (igual que tu versión) -->
+        <div class="service-card bg-luxury-black rounded-sm overflow-hidden transition duration-300 hover:shadow-lg border border-champagne/10">
+          <div class="h-64 overflow-hidden relative">
+            <img src="imgs/Pavid.png" alt="Manicure & Pedicure" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/80 to-transparent"></div>
+          </div>
+          <div class="p-8">
+            <div class="flex items-center mb-6">
+              <div class="bg-champagne/10 p-3 rounded-sm mr-4 border border-champagne/20">
+                <i class="fas fa-paint-brush text-champagne text-xl"></i>
+              </div>
+              <h3 class="font-cormorant text-2xl font-bold text-champagne">Gel X</h3>
+            </div>
+            <p class="font-montserrat text-champagne/70 mb-6 leading-relaxed">Extensiones de gel innovadoras, ligeras y resistentes, que se adaptan perfectamente a tu uña natural. Ideal para lograr longitud y un acabado elegante sin dañar la uña.</p>
+            <div class="flex justify-between items-center pt-4 border-t border-champagne/10">
+              <span class="font-cormorant text-champagne font-bold text-lg">Desde ₡18,000 *según diseño</span>
+              <button class="text-xs font-montserrat bg-champagne/10 hover:bg-champagne/20 text-champagne py-2 px-4 rounded-sm border border-champagne/20 transition">DETALLES</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+          <div class="h-48 overflow-hidden">
+            <img src="imgs/rubber base.jpeg" alt="Manicure & Pedicure" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="bg-rose-100 p-3 rounded-full mr-4">
+                <i class="fas fa-hand-sparkles text-rose-500 text-xl"></i>
+              </div>
+              <h3 class="title-font text-xl font-bold text-gray-800">Nivelación Rubber Base</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Técnica revolucionaria que fortalece tus uñas naturales...</p>
+            <div class="flex justify-between items-center">
+              <span class="text-rose-500 font-bold">Desde ₡12,000</span>
+              <button class="text-sm bg-rose-100 hover:bg-rose-200 text-rose-700 py-1 px-3 rounded-full transition">Más info</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+          <div class="h-48 overflow-hidden">
+            <img src="imgs/spa.jpg" alt="Manicure & Pedicure" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="bg-rose-100 p-3 rounded-full mr-4">
+                <i class="fas fa-spa text-rose-500 text-xl"></i>
+              </div>
+              <h3 class="title-font text-xl font-bold text-gray-800">Pedicure spa</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Relajante tratamiento que incluye limado, cuidado de cutículas, exfoliación, hidratación profunda y esmaltado, dejando tus pies suaves y renovados.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-rose-500 font-bold">Desde ₡18,000</span>
+              <button class="text-sm bg-rose-100 hover:bg-rose-200 text-rose-700 py-1 px-3 rounded-full transition">Más info</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+          <div class="h-48 overflow-hidden">
+            <img src="imgs/azules.jpeg" alt="Manicure & Pedicure" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="bg-rose-100 p-3 rounded-full mr-4">
+                <i class="fas fa-hand-sparkles text-rose-500 text-xl"></i>
+              </div>
+              <h3 class="title-font text-xl font-bold text-gray-800">Semi permanente</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Esmalte premium que dura hasta 3 semanas con nuestro brillo característico...</p>
+            <div class="flex justify-between items-center">
+              <span class="text-rose-500 font-bold">Desde ₡8,000</span>
+              <button class="text-sm bg-rose-100 hover:bg-rose-200 text-rose-700 py-1 px-3 rounded-full transition">Más info</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="py-20 bg-rose-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestros Trabajos</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Explora nuestra galería de diseños exclusivos...</p>
+        <div class="w-20 h-1 bg-rose-300 mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/azules.jpeg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/Productos.jpg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/rubber-base.jpeg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/Salmon.jpeg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/nails_by_pao_final_post.jpeg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/nails_by_pao_final_post_with_frame.jpeg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/french.jpg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/fusion.jpg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a target="_blank" href="https://www.facebook.com/profile.php?id=100092752116687" class="text-gray-400 hover:text-rose-300 transition text-xl">
+          Ver más en Facebook <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOS -->
+  <section id="promociones" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Promociones Especiales</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Aprovecha nuestras ofertas limitadas...</p>
+        <div class="w-20 h-1 bg-rose-300 mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-r from-rose-100 to-rose-50 rounded-xl shadow-lg overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center mb-4">
+              <div class="bg-white p-3 rounded-full mr-4 shadow-md"><i class="fas fa-heart text-rose-500 text-xl"></i></div>
+              <h3 class="title-font text-2xl font-bold text-gray-800">Graduaciones</h3>
+            </div>
+            <p class="text-gray-600 mb-6">Uñas listas para tu gran día. Diseño especial de graduación + manicure básico con 20% de descuento. 🎓</p>
+            <div class="flex justify-between items-center">
+              <span class="text-rose-600 font-bold text-xl">₡25,000 <span class="text-gray-500 line-through text-sm">₡30,000</span></span>
+              <button class="bg-white hover:bg-rose-100 text-rose-600 font-bold py-2 px-6 rounded-full transition">Reservar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-amber-100 to-amber-50 rounded-xl shadow-lg overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center mb-4">
+              <div class="bg-white p-3 rounded-full mr-4 shadow-md"><i class="fas fa-gift text-amber-500 text-xl"></i></div>
+              <h3 class="title-font text-2xl font-bold text-gray-800">Día de la Madre</h3>
+            </div>
+            <p class="text-gray-600 mb-6">Paquete completo madre e hija con 25% de descuento...</p>
+            <div class="flex justify-between items-center">
+              <span class="text-amber-600 font-bold text-xl">₡40,000 <span class="text-gray-500 line-through text-sm">₡35,000</span></span>
+              <button class="bg-white hover:bg-amber-100 text-amber-600 font-bold py-2 px-6 rounded-full transition">Reservar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-600 mb-4">¿Quieres recibir nuestras promociones directamente en tu correo?</p>
+        <div class="max-w-md mx-auto flex">
+          <input type="email" placeholder="Tu correo electrónico" class="flex-grow px-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-300">
+          <button class="bg-rose-300 hover:bg-rose-400 text-black font-bold py-2 px-6 rounded-r-full transition">Suscribirme</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Section -->
+<section id="instagram" class="py-12 bg-black">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="font-cormorant text-3xl font-bold text-champagne mb-6">
+      Síguenos en Instagram
+    </h2>
+    <p class="text-champagne/70 mb-8">
+      Descubre nuestros últimos diseños, promociones y novedades en 
+      <a href="https://www.instagram.com/nailsbypaobeautycr" 
+         target="_blank" 
+         class="text-pink-400 font-semibold hover:underline">
+         @nailsbypao30
+      </a>
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Post 1 -->
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DL7kQZPslQe/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DL7kQZPslQe/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DL7kQZPslQe/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida de nailsbypao (@nailsbypao30)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+      <!-- Post 2 -->
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DKABgizRI0l/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DKABgizRI0l/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DKABgizRI0l/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida de nailsbypao (@nailsbypao30)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+      <!-- Post 3 -->
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DKABJYuxjUE/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DKABJYuxjUE/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DKABJYuxjUE/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida de nailsbypao (@nailsbypao30)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+    </div>
+
+    <!-- Script de Instagram -->
+    <script async src="//www.instagram.com/embed.js"></script>
+  </div>
+</section>
+  
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20 bg-luxury-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:flex lg:items-start lg:justify-between gap-8">
+        <!-- Info -->
+        <div class="lg:w-1/2 mb-10 lg:mb-0 animate-fade-in">
+          <h2 class="title-font text-3xl md:text-4xl font-bold text-white mb-6">Contacto</h2>
+          <p class="text-gray-300 mb-8 leading-relaxed">Estamos ubicados en el corazón de la ciudad...</p>
+
+          <div class="space-y-6 text-gray-300">
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-rose-400 text-xl mt-1"></i>
+              <div class="ml-4">
+                <h4 class="font-bold text-white">Dirección</h4>
+                <p>Nicoya<br>Guanacaste</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-phone-alt text-rose-400 text-xl mt-1"></i>
+              <div class="ml-4">
+                <h4 class="font-bold text-white">Teléfono</h4>
+                <p>+506 7134-3776</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-envelope text-rose-400 text-xl mt-1"></i>
+              <div class="ml-4">
+                <h4 class="font-bold text-white">Email</h4>
+                <p>nailsbypaobeautycr@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-clock text-rose-400 text-xl mt-1"></i>
+              <div class="ml-4">
+                <h4 class="font-bold text-white">Horario</h4>
+                <p>Lunes a Viernes: 10:00 - 19:00<br>Sábados: 10:00 - 16:00<br>Domingos: Cerrado</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <a href="https://wa.me/50671343776" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition">
+              <i class="fab fa-whatsapp text-xl mr-2"></i> Envíanos un WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- FORMULARIO (Formspree listo + mensajes) -->
+        <div class="lg:w-1/2 animate-fade-in">
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <h3 class="title-font text-2xl font-bold text-gray-800 mb-6">Reserva tu Cita</h3>
+
+            <!-- ✅ Formspree -->
+            <form id="booking-form" action="https://formspree.io/f/mwpneoyl" method="POST">
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
+                <input type="text" id="name" name="name" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+              </div>
+
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
+                <input type="email" id="email" name="email" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+              </div>
+
+              <div class="mb-4">
+                <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono</label>
+                <input type="tel" id="phone" name="phone" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+              </div>
+
+              <div class="mb-4">
+                <label for="service" class="block text-gray-700 font-medium mb-2">Servicio</label>
+                <select id="service" name="service" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+                  <option value="">Selecciona un servicio</option>
+                  <option>Esmaltado Semipermanente</option>
+                  <option>Nivelación Rubber Base</option>
+                  <option>Manicure</option>
+                  <option>Pedicure</option>
+                  <option>Diseño Personalizado</option>
+                </select>
+              </div>
+
+              <div class="mb-6">
+                <label for="date" class="block text-gray-700 font-medium mb-2">Fecha y hora</label>
+                <input type="datetime-local" id="date" name="date" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+              </div>
+
+              <!-- Mensaje de estado -->
+              <p id="form-status" class="hidden text-center text-sm mb-4"></p>
+
+              <button type="submit" id="submit-btn"
+                class="w-full bg-rose-300 hover:bg-rose-400 text-black font-bold py-3 px-4 rounded-full transition duration-300">
+                Confirmar Reservación
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <div class="h-96 w-full">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3927.3675936873396!2d-85.4558769249668!3d10.150745389962538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDA5JzAyLjciTiA4NcKwMjcnMTEuOSJX!5e0!3m2!1ses-419!2scr!4v1756078171635!5m2!1ses-419!2scr" width="100" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="title-font text-xl font-bold text-rose-300 mb-4">Nails by Pao</h3>
+          <p class="text-gray-400">Especialistas en cuidado y diseño de uñas con los más altos estándares de calidad y profesionalismo.</p>
+        </div>
+        <div>
+          <h4 class="title-font font-bold text-white mb-4">Enlaces Rápidos</h4>
+          <ul class="space-y-2">
+            <li><a href="#inicio" class="text-gray-400 hover:text-rose-300 transition">Inicio</a></li>
+            <li><a href="#sobre-mi" class="text-gray-400 hover:text-rose-300 transition">Sobre Mí</a></li>
+            <li><a href="#servicios" class="text-gray-400 hover:text-rose-300 transition">Servicios</a></li>
+            <li><a href="#galeria" class="text-gray-400 hover:text-rose-300 transition">Galería</a></li>
+            <li><a href="#contacto" class="text-gray-400 hover:text-rose-300 transition">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="title-font font-bold text-white mb-4">Horario</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>Lunes - Viernes: 10:00 - 19:00</li>
+            <li>Sábados: 10:00 - 16:00</li>
+            <li>Domingos: Cerrado</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="title-font font-bold text-white mb-4">Síguenos</h4>
+          <div class="flex space-x-4">
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100092752116687" class="text-gray-400 hover:text-rose-300 transition text-xl"><i class="fab fa-facebook-f"></i></a>
+            <a target="_blank" href="https://www.instagram.com/nailsbypao30/" class="text-gray-400 hover:text-rose-300 transition text-xl"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="https://www.tiktok.com/@nails.by.pao77?_t=ZM-8z8pjrKHjlO&_r=1" class="text-gray-400 hover:text-rose-300 transition text-xl"><i class="fab fa-tiktok"></i></a>
+          </div>
+          <div class="mt-6">
+            <a href="#inicio" class="inline-flex items-center text-rose-300 hover:text-white">
+              Volver arriba <i class="fas fa-arrow-up ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2023 Nails by Pao. Todos los derechos reservados.</p>
+      </div>
+    </div>
   </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/50671343776" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition z-50" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    // Toggle móvil (ahora con verificación)
+    const mobileBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const headerHeight = document.querySelector('nav').offsetHeight;
+          const top = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          window.scrollTo({ top, behavior: 'smooth' });
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+
+    // Intersection fade-in
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section, .service-card').forEach(el => observer.observe(el));
+
+    // Navbar efecto
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('bg-black', 'bg-opacity-95', 'shadow-md');
+        nav.classList.remove('bg-opacity-90');
+      } else {
+        nav.classList.add('bg-opacity-90');
+        nav.classList.remove('bg-opacity-95', 'shadow-md');
+      }
+    });
+
+    // ✅ Envío AJAX a Formspree con feedback en la misma página
+    const form = document.getElementById('booking-form');
+    const statusEl = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        statusEl.className = "text-center text-sm mb-4 text-gray-600";
+        statusEl.textContent = "Enviando...";
+        submitBtn.disabled = true;
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          });
+
+          if (res.ok) {
+            statusEl.className = "text-center text-sm mb-4 text-green-600";
+            statusEl.textContent = "¡Gracias! Tu reservación fue enviada. Te contactaremos pronto.";
+            form.reset();
+          } else {
+            const data = await res.json().catch(() => ({}));
+            statusEl.className = "text-center text-sm mb-4 text-red-600";
+            statusEl.textContent = data && data.errors
+              ? data.errors.map(err => err.message).join(", ")
+              : "Hubo un problema al enviar el formulario. Inténtalo de nuevo.";
+          }
+        } catch (err) {
+          statusEl.className = "text-center text-sm mb-4 text-red-600";
+          statusEl.textContent = "No se pudo enviar. Revisa tu conexión.";
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+    }
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
