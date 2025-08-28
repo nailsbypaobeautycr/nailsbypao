@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Nails by Pao | Nails Studio Salón</title>
 
-  <!-- Tailwind (CDN) -->
+  <!-- Tailwind -->
   <script>
     tailwind = {};
     tailwind.config = {
@@ -17,17 +17,17 @@
             'luxury-black': '#0d0d0d'
           },
           fontFamily: {
-            'cormorant': ['"Cormorant Garamond"', 'serif'],
-            'montserrat': ['Montserrat', 'sans-serif'],
-            'allura': ['Allura', 'cursive']
+            cormorant: ['"Cormorant Garamond"', 'serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+            allura: ['Allura', 'cursive']
           }
         }
       }
-    }
+    };
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome CDN -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <!-- Google Fonts -->
@@ -39,36 +39,31 @@
       --lux-black: #0d0d0d;
       --metallic-pink: #e6a8d7;
     }
-    body { background-color: var(--lux-black); color: #fff; }
+    body { background-color: var(--lux-black); color: #fff; -webkit-font-smoothing:antialiased; }
     .text-champagne { color: var(--champagne); }
     .bg-champagne { background-color: var(--champagne); color: #000; }
     .border-champagne { border-color: var(--champagne); }
     .bg-luxury-black { background-color: var(--lux-black); }
-
-    /* subtle glow similar to logo */
     .text-glow { text-shadow: 0 0 6px rgba(243,229,216,0.6), 0 0 12px rgba(243,229,216,0.35); }
-
-    /* accessibility focus */
     .focus-outline:focus { outline: 3px solid rgba(243,229,216,0.18); outline-offset: 2px; }
-
-    /* small helper so image fallback not break layout */
-    img.object-contain-fix { object-fit: contain; }
+    /* prevent huge images from overflowing modal on small screens */
+    .modal-img { max-height: 60vh; object-fit: cover; width:100%; display:block; }
   </style>
 </head>
-<body class="antialiased font-montserrat">
+<body class="font-montserrat">
 
   <!-- HEADER -->
-  <header class="border-b border-champagne/10">
-    <div class="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
+  <header class="border-b border-champagne/10 bg-luxury-black">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <a href="/" class="flex items-center" aria-label="Inicio Nails by Pao">
+        <!-- circular icon -->
         <img src="imgs/Logo.png" alt="Icono Nails by Pao" class="h-12 w-12 rounded-full mr-3 object-cover border-2 border-champagne shadow" onerror="this.style.display='none'">
-        <!-- Wordmark image, con fallback a texto si no existe -->
-        <img id="wordmarkImg" src="imgs/nails.png" alt="Nails by Pao" class="h-10 object-contain object-contain-fix"
+        <!-- wordmark image with fallback -->
+        <img id="wordmarkImg" src="imgs/nails.png" alt="Nails by Pao" class="h-10 object-contain"
              onerror="this.classList.add('hidden'); document.getElementById('wordmarkFallback').classList.remove('hidden');">
-        <span id="wordmarkFallback" class="hidden ml-2 font-allura text-3xl text-champagne text-glow">Nails by Pao</span>
+        <span id="wordmarkFallback" class="hidden ml-3 font-allura text-3xl text-champagne text-glow">Nails by Pao</span>
       </a>
 
-      <!-- Nav -->
       <nav class="hidden md:flex items-center gap-6 text-champagne">
         <a href="#inicio" class="hover:text-white focus-outline">Inicio</a>
         <a href="#sobre-mi" class="hover:text-white focus-outline">Sobre mí</a>
@@ -105,7 +100,7 @@
   <section id="sobre-mi" class="py-12 px-4">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
       <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-champagne">
-        <img src="imgs/paola.jpg" alt="Paola - Nails by Pao" class="w-full h-full object-cover" onerror="this.style.display='none'">
+        <img src="imgs/Logo.png" alt="Paola - Nails by Pao" class="w-full h-full object-cover" onerror="this.style.display='none'">
       </div>
       <div class="flex-1 text-champagne">
         <h2 class="text-3xl font-cormorant mb-3">Hola, soy Paola</h2>
@@ -124,18 +119,18 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- Card template 1 -->
+        <!-- Service card 1 -->
         <article class="service-card bg-luxury-black rounded-sm overflow-hidden border border-champagne/10">
           <div class="h-64 overflow-hidden relative">
-            <img src="imgs/Pavid.png" alt="Gel X" class="w-full h-full object-cover" onerror="this.style.background='linear-gradient(90deg,#111,#222)';">
-            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent"></div>
+            <img src="imgs/Pavid.png" alt="Gel X" class="w-full h-full object-cover service-thumb" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent pointer-events-none"></div>
           </div>
           <div class="p-6">
             <h3 class="font-cormorant text-2xl font-bold text-champagne mb-2">Gel X</h3>
             <p class="text-champagne/70 mb-4">Extensiones de gel innovadoras, ligeras y resistentes.</p>
             <div class="flex items-center justify-between">
               <span class="font-cormorant text-champagne font-bold">Desde ₡18,000</span>
-              <button class="text-xs bg-champagne/10 text-champagne px-4 py-2 rounded-sm border border-champagne/20"
+              <button class="text-xs bg-champagne/10 text-champagne px-3 py-2 rounded-sm border border-champagne/20"
                       onclick="openModal(this)"
                       data-title="Gel X"
                       data-img="imgs/Pavid.png"
@@ -147,21 +142,21 @@
           </div>
         </article>
 
-        <!-- Card template 2 -->
+        <!-- Service card 2 -->
         <article class="service-card bg-luxury-black rounded-sm overflow-hidden border border-champagne/10">
           <div class="h-64 overflow-hidden relative">
-            <img src="imgs/nivelacion.jpeg" alt="Manicura Spa" class="w-full h-full object-cover" onerror="this.style.background='linear-gradient(90deg,#111,#222)';">
-            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent"></div>
+            <img src="imgs/servicio2.png" alt="Manicura Spa" class="w-full h-full object-cover service-thumb" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent pointer-events-none"></div>
           </div>
           <div class="p-6">
             <h3 class="font-cormorant text-2xl font-bold text-champagne mb-2">Manicura Spa</h3>
             <p class="text-champagne/70 mb-4">Cuidado completo para tus manos con hidratación profunda.</p>
             <div class="flex items-center justify-between">
               <span class="font-cormorant text-champagne font-bold">₡12,000</span>
-              <button class="text-xs bg-champagne/10 text-champagne px-4 py-2 rounded-sm border border-champagne/20"
+              <button class="text-xs bg-champagne/10 text-champagne px-3 py-2 rounded-sm border border-champagne/20"
                       onclick="openModal(this)"
                       data-title="Manicura Spa"
-                      data-img="imgs/nivelacion.jpeg"
+                      data-img="imgs/servicio2.png"
                       data-desc="Tratamiento completo que incluye limpieza, exfoliación, hidratación y esmaltado profesional."
                       data-price="₡12,000">
                 DETALLES
@@ -170,21 +165,21 @@
           </div>
         </article>
 
-        <!-- Card template 3 -->
+        <!-- Service card 3 -->
         <article class="service-card bg-luxury-black rounded-sm overflow-hidden border border-champagne/10">
           <div class="h-64 overflow-hidden relative">
-            <img src="imgs/azules.jpeg" alt="Pedicure Deluxe" class="w-full h-full object-cover" onerror="this.style.background='linear-gradient(90deg,#111,#222)';">
-            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent"></div>
+            <img src="imgs/servicio3.png" alt="Pedicure Deluxe" class="w-full h-full object-cover service-thumb" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent pointer-events-none"></div>
           </div>
           <div class="p-6">
             <h3 class="font-cormorant text-2xl font-bold text-champagne mb-2">Pedicure Deluxe</h3>
             <p class="text-champagne/70 mb-4">Relajación total y pies suaves con acabado perfecto.</p>
             <div class="flex items-center justify-between">
               <span class="font-cormorant text-champagne font-bold">₡15,000</span>
-              <button class="text-xs bg-champagne/10 text-champagne px-4 py-2 rounded-sm border border-champagne/20"
+              <button class="text-xs bg-champagne/10 text-champagne px-3 py-2 rounded-sm border border-champagne/20"
                       onclick="openModal(this)"
                       data-title="Pedicure Deluxe"
-                      data-img="imgs/azules.jpeg"
+                      data-img="imgs/servicio3.png"
                       data-desc="Incluye remojo relajante, exfoliación, hidratación y masaje relajante con acabado profesional."
                       data-price="₡15,000">
                 DETALLES
@@ -193,7 +188,8 @@
           </div>
         </article>
 
-        <!-- Puedes duplicar más cards aquí -->
+        <!-- (Duplica tarjetas adicionales aquí siguiendo el mismo patrón) -->
+
       </div>
     </div>
   </section>
@@ -201,14 +197,12 @@
   <!-- GALERÍA / INSTAGRAM -->
   <section id="galeria" class="py-12 px-4">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-8">
+      <div class="text-center mb-6">
         <h2 class="text-3xl font-cormorant text-champagne">Síguenos en Instagram</h2>
         <p class="text-champagne/70">Inspírate con nuestros últimos trabajos</p>
       </div>
 
-      <!-- Instagram grid (imágenes locales o thumbnails que enlazan a tu Instagram) -->
       <div class="grid grid-cols-3 md:grid-cols-6 gap-3">
-        <!-- Reemplaza estos imgs por thumbnails reales -->
         <a href="https://instagram.com/nailsbypao" target="_blank" rel="noopener" aria-label="Ir a Instagram">
           <img src="imgs/ig1.png" alt="IG 1" class="w-full h-28 object-cover rounded" onerror="this.style.display='none'">
         </a>
@@ -252,12 +246,12 @@
     <p class="text-champagne/60">&copy; <span id="year"></span> Nails by Pao. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- MODAL (global, oculto) -->
+  <!-- MODAL GLOBAL -->
   <div id="serviceModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="bg-luxury-black border border-champagne/20 rounded-lg max-w-3xl w-11/12 overflow-hidden shadow-lg">
       <div class="relative">
         <button id="modalClose" aria-label="Cerrar" class="absolute top-3 right-3 z-20 text-champagne bg-champagne/10 rounded-full px-3 py-1 hover:bg-champagne/20">✕</button>
-        <img id="modalImg" src="" alt="Imagen del servicio" class="w-full h-72 object-cover">
+        <img id="modalImg" src="" alt="Imagen del servicio" class="modal-img w-full">
       </div>
       <div class="p-6 text-champagne">
         <h3 id="modalHeading" class="text-2xl font-cormorant mb-3"></h3>
@@ -269,16 +263,15 @@
 
   <!-- SCRIPTS -->
   <script>
-    // Year in footer
+    // set footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile menu toggle
+    // mobile menu toggle
     document.getElementById('mobileBtn').addEventListener('click', function(){
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
+      document.getElementById('mobileMenu').classList.toggle('hidden');
     });
 
-    // Modal logic (delegated)
+    // modal elements
     const modal = document.getElementById('serviceModal');
     const modalImg = document.getElementById('modalImg');
     const modalHeading = document.getElementById('modalHeading');
@@ -286,14 +279,23 @@
     const modalPrice = document.getElementById('modalPrice');
     const modalCloseBtn = document.getElementById('modalClose');
 
-    // openModal when a DETALLES button is clicked (we pass `this` button)
-    function openModal(btn) {
-      // if called programmatically with element, else if called with event target
-      const el = (btn instanceof HTMLElement) ? btn : btn.target;
-      const title = el.getAttribute('data-title') || '';
-      const img = el.getAttribute('data-img') || '';
-      const desc = el.getAttribute('data-desc') || '';
-      const price = el.getAttribute('data-price') || '';
+    // openModal expects either the button element (this) or (title,img,desc,price) args
+    function openModal(arg1, arg2, arg3, arg4) {
+      let title, img, desc, price;
+      if (typeof arg1 === 'object' && arg1 instanceof HTMLElement) {
+        // button called as openModal(this)
+        const btn = arg1;
+        title = btn.dataset.title || '';
+        img = btn.dataset.img || '';
+        desc = btn.dataset.desc || '';
+        price = btn.dataset.price || '';
+      } else {
+        // called with args: title,img,desc,price
+        title = arg1 || '';
+        img = arg2 || '';
+        desc = arg3 || '';
+        price = arg4 || '';
+      }
 
       modalHeading.textContent = title;
       modalImg.src = img;
@@ -304,52 +306,48 @@
       modal.classList.add('flex');
       modal.setAttribute('aria-hidden','false');
 
-      // focus for accessibility
+      // accessibility focus
       modalCloseBtn.focus();
-      // stop background scroll
+      // prevent background scroll
       document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
     }
 
-    // close function
     function closeModal() {
       modal.classList.remove('flex');
       modal.classList.add('hidden');
       modal.setAttribute('aria-hidden','true');
-
-      // restore scroll
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
     }
 
-    // close button
+    // attach close handlers
     modalCloseBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
 
-    // close on click outside
-    modal.addEventListener('click', function(e){
-      if(e.target === modal) closeModal();
+    // attach event to any existing inline onclick="openModal('Title','img','desc','price')"
+    document.querySelectorAll('button[onclick^="openModal(\'"]').forEach(btn => {
+      // leave inline handlers as-is (they will call openModal with string args)
     });
 
-    // close on ESC
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-    });
-
-    // If by any reason page already had inline DETALLES handlers, we keep compatibility:
-    document.querySelectorAll('button[onclick^="openModal"]').forEach(btn => {
-      // already used inline onclick with string, so skip (they will call openModal with string)
-    });
-
-    // Attach click listeners to buttons that use data-* attributes (above cards)
+    // attach event listeners to data-* buttons (recommended)
     document.querySelectorAll('button[data-title]').forEach(btn => {
-      // ensure existing inline onclick doesn't conflict; we overwrite safely
       btn.addEventListener('click', function(){ openModal(this); });
     });
 
-    // Safety: ensure images missing don't break layout (optional)
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('error', function(){ this.style.display='none'; });
+    // fallback: clicking thumbnail image opens modal (if you want this behavior)
+    document.querySelectorAll('.service-thumb').forEach(img => {
+      img.addEventListener('click', function(){
+        // look for the closest card's button with data attributes
+        const card = img.closest('.service-card') || img.closest('article');
+        const btn = card ? card.querySelector('button[data-title]') : null;
+        if (btn) openModal(btn);
+      });
     });
+
+    // safe image error handler
+    document.querySelectorAll('img').forEach(i => i.addEventListener('error', function(){ this.style.display='none'; }));
   </script>
 </body>
 </html>
