@@ -204,9 +204,9 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Servicio 1: Gel X -->
+        <!-- CARD 1: Gel X -->
         <div class="service-card bg-luxury-black rounded-sm overflow-hidden transition duration-300 hover:shadow-lg border border-champagne/10">
-          <div class="h-64 overflow-hidden relative cursor-pointer" onclick="openModal('imgs/Pavid.png', 'Gel X')">
+          <div class="h-64 overflow-hidden relative cursor-pointer" onclick="openServiceModal('Gel X', 'imgs/Pavid.png', 'Extensiones de gel innovadoras, ligeras y resistentes, que se adaptan perfectamente a tu uña natural.', '₡18,000')">
             <img src="imgs/Pavid.png" alt="Gel X" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/80 to-transparent"></div>
           </div>
@@ -215,55 +215,67 @@
             <p class="font-montserrat text-champagne/70 mb-6">Extensiones de gel innovadoras, ligeras y resistentes, que se adaptan perfectamente a tu uña natural.</p>
             <div class="flex justify-between items-center pt-4 border-t border-champagne/10">
               <span class="font-cormorant text-champagne font-bold text-lg">Desde ₡18,000</span>
-              <button onclick="openModal('imgs/Pavid.png', 'Gel X')" class="text-xs font-montserrat bg-champagne/10 hover:bg-champagne/20 text-champagne py-2 px-4 rounded-sm border border-champagne/20 transition">DETALLES</button>
+              <button onclick="openServiceModal('Gel X', 'imgs/Pavid.png', 'Extensiones de gel innovadoras, ligeras y resistentes, que se adaptan perfectamente a tu uña natural.', '₡18,000')" class="text-xs font-montserrat bg-champagne/10 hover:bg-champagne/20 text-champagne py-2 px-4 rounded-sm border border-champagne/20 transition">DETALLES</button>
             </div>
           </div>
         </div>
 
-        <!-- Servicio 2: Nivelación Rubber Base -->
-        <div class="service-card bg-luxury-black rounded-sm overflow-hidden transition duration-300 hover:shadow-lg border border-champagne/10">
-          <div class="h-64 overflow-hidden relative cursor-pointer" onclick="openModal('imgs/nivelacion.jpeg', 'Nivelación Rubber Base')">
+        <!-- CARD 2: Nivelación Rubber Base -->
+        <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+          <div class="h-48 overflow-hidden cursor-pointer" onclick="openServiceModal('Nivelación Rubber Base', 'imgs/nivelacion.jpeg', 'Técnica revolucionaria que fortalece tus uñas naturales y crea una superficie perfectamente lisa para el esmaltado.', '₡12,000')">
             <img src="imgs/nivelacion.jpeg" alt="Nivelación Rubber Base" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/80 to-transparent"></div>
           </div>
-          <div class="p-8">
-            <h3 class="font-cormorant text-2xl font-bold text-champagne mb-4">Nivelación Rubber Base</h3>
-            <p class="font-montserrat text-champagne/70 mb-6">Técnica revolucionaria que fortalece tus uñas naturales y crea una superficie perfectamente lisa para el esmaltado.</p>
-            <div class="flex justify-between items-center pt-4 border-t border-champagne/10">
-              <span class="font-cormorant text-champagne font-bold text-lg">Desde ₡12,000</span>
-              <button onclick="openModal('imgs/nivelacion.jpeg', 'Nivelación Rubber Base')" class="text-xs font-montserrat bg-champagne/10 hover:bg-champagne/20 text-champagne py-2 px-4 rounded-sm border border-champagne/20 transition">DETALLES</button>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="bg-rose-100 p-3 rounded-full mr-4">
+                <i class="fas fa-hand-sparkles text-rose-500 text-xl"></i>
+              </div>
+              <h3 class="title-font text-xl font-bold text-gray-800">Nivelación Rubber Base</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Técnica revolucionaria que fortalece tus uñas naturales...</p>
+            <div class="flex justify-between items-center">
+              <span class="text-rose-500 font-bold">Desde ₡12,000</span>
+              <button onclick="openServiceModal('Nivelación Rubber Base', 'imgs/nivelacion.jpeg', 'Técnica revolucionaria que fortalece tus uñas naturales y crea una superficie perfectamente lisa para el esmaltado.', '₡12,000')" class="text-sm bg-rose-100 hover:bg-rose-200 text-rose-700 py-1 px-3 rounded-full transition">Más info</button>
             </div>
           </div>
         </div>
 
-        <!-- Servicio 3: Pedicure spa -->
-        <div class="service-card bg-luxury-black rounded-sm overflow-hidden transition duration-300 hover:shadow-lg border border-champagne/10">
-          <div class="h-64 overflow-hidden relative cursor-pointer" onclick="openModal('imgs/spa.jpg', 'Pedicure Spa')">
+        <!-- CARD 3: Pedicure spa -->
+        <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+          <div class="h-48 overflow-hidden cursor-pointer" onclick="openServiceModal('Pedicure Spa', 'imgs/spa.jpg', 'Relajante tratamiento que incluye limado, cuidado de cutículas, exfoliación, hidratación profunda y esmaltado, dejando tus pies suaves y renovados.', '₡18,000')">
             <img src="imgs/spa.jpg" alt="Pedicure Spa" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/80 to-transparent"></div>
           </div>
-          <div class="p-8">
-            <h3 class="font-cormorant text-2xl font-bold text-champagne mb-4">Pedicure Spa</h3>
-            <p class="font-montserrat text-champagne/70 mb-6">Relajante tratamiento que incluye limado, cuidado de cutículas, exfoliación, hidratación profunda y esmaltado.</p>
-            <div class="flex justify-between items-center pt-4 border-t border-champagne/10">
-              <span class="font-cormorant text-champagne font-bold text-lg">Desde ₡18,000</span>
-              <button onclick="openModal('imgs/spa.jpg', 'Pedicure Spa')" class="text-xs font-montserrat bg-champagne/10 hover:bg-champagne/20 text-champagne py-2 px-4 rounded-sm border border-champagne/20 transition">DETALLES</button>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="bg-rose-100 p-3 rounded-full mr-4">
+                <i class="fas fa-spa text-rose-500 text-xl"></i>
+              </div>
+              <h3 class="title-font text-xl font-bold text-gray-800">Pedicure spa</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Relajante tratamiento que incluye limado, cuidado de cutículas, exfoliación, hidratación profunda y esmaltado, dejando tus pies suaves y renovados.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-rose-500 font-bold">Desde ₡18,000</span>
+              <button onclick="openServiceModal('Pedicure Spa', 'imgs/spa.jpg', 'Relajante tratamiento que incluye limado, cuidado de cutículas, exfoliación, hidratación profunda y esmaltado, dejando tus pies suaves y renovados.', '₡18,000')" class="text-sm bg-rose-100 hover:bg-rose-200 text-rose-700 py-1 px-3 rounded-full transition">Más info</button>
             </div>
           </div>
         </div>
 
-        <!-- Servicio 4: Semi permanente -->
-        <div class="service-card bg-luxury-black rounded-sm overflow-hidden transition duration-300 hover:shadow-lg border border-champagne/10">
-          <div class="h-64 overflow-hidden relative cursor-pointer" onclick="openModal('imgs/pink_heart.jpeg', 'Semi Permanente')">
+        <!-- CARD 4: Semi permanente -->
+        <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+          <div class="h-48 overflow-hidden cursor-pointer" onclick="openServiceModal('Semi Permanente', 'imgs/pink_heart.jpeg', 'Esmalte premium que dura hasta 3 semanas con nuestro brillo característico, sin dañar tus uñas naturales.', '₡8,000')">
             <img src="imgs/pink_heart.jpeg" alt="Semi Permanente" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/80 to-transparent"></div>
           </div>
-          <div class="p-8">
-            <h3 class="font-cormorant text-2xl font-bold text-champagne mb-4">Semi Permanente</h3>
-            <p class="font-montserrat text-champagne/70 mb-6">Esmalte premium que dura hasta 3 semanas con nuestro brillo característico, sin dañar tus uñas naturales.</p>
-            <div class="flex justify-between items-center pt-4 border-t border-champagne/10">
-              <span class="font-cormorant text-champagne font-bold text-lg">Desde ₡8,000</span>
-              <button onclick="openModal('imgs/pink_heart.jpeg', 'Semi Permanente')" class="text-xs font-montserrat bg-champagne/10 hover:bg-champagne/20 text-champagne py-2 px-4 rounded-sm border border-champagne/20 transition">DETALLES</button>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="bg-rose-100 p-3 rounded-full mr-4">
+                <i class="fas fa-hand-sparkles text-rose-500 text-xl"></i>
+              </div>
+              <h3 class="title-font text-xl font-bold text-gray-800">Semi permanente</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Esmalte premium que dura hasta 3 semanas con nuestro brillo característico...</p>
+            <div class="flex justify-between items-center">
+              <span class="text-rose-500 font-bold">Desde ₡8,000</span>
+              <button onclick="openServiceModal('Semi Permanente', 'imgs/pink_heart.jpeg', 'Esmalte premium que dura hasta 3 semanas con nuestro brillo característico, sin dañar tus uñas naturales.', '₡8,000')" class="text-sm bg-rose-100 hover:bg-rose-200 text-rose-700 py-1 px-3 rounded-full transition">Más info</button>
             </div>
           </div>
         </div>
@@ -271,68 +283,305 @@
     </div>
   </section>
 
-  <!-- Resto del código se mantiene igual hasta el final -->
+  <!-- GALERÍA -->
+  <section id="galeria" class="py-20 bg-rose-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestros Trabajos</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Explora nuestra galería de diseños exclusivos...</p>
+        <div class="w-20 h-1 bg-rose-300 mx-auto mt-4"></div>
+      </div>
 
-  <!-- MODAL -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/azules.jpeg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/Productos.jpg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/rubber_base.jpeg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/Salmon.jpeg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/nails_by_pao_final_post.jpeg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/hojas.jpeg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/french.jpg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+        <div class="gallery-item overflow-hidden rounded-lg shadow-md"><img src="imgs/fusion.jpg" class="w-full h-64 object-cover hover:opacity-90 transition" alt=""></div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a target="_blank" href="https://www.facebook.com/profile.php?id=100092752116687" class="text-gray-400 hover:text-rose-300 transition text-xl">
+          Ver más en Facebook <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOCIONES (comentada) -->
+  <!--
+  <section id="promociones" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Promociones Especiales</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Aprovecha nuestras ofertas limitadas...</p>
+        <div class="w-20 h-1 bg-rose-300 mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-r from-rose-100 to-rose-50 rounded-xl shadow-lg overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center mb-4">
+              <div class="bg-white p-3 rounded-full mr-4 shadow-md"><i class="fas fa-heart text-rose-500 text-xl"></i></div>
+              <h3 class="title-font text-2xl font-bold text-gray-800">Graduaciones</h3>
+            </div>
+            <p class="text-gray-600 mb-6">Uñas listas para tu gran día. Diseño especial de graduación + manicure básico con 20% de descuento. 🎓</p>
+            <div class="flex justify-between items-center">
+              <span class="text-rose-600 font-bold text-xl">₡25,000 <span class="text-gray-500 line-through text-sm">₡30,000</span></span>
+              <button class="bg-white hover:bg-rose-100 text-rose-600 font-bold py-2 px-6 rounded-full transition">Reservar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-amber-100 to-amber-50 rounded-xl shadow-lg overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center mb-4">
+              <div class="bg-white p-3 rounded-full mr-4 shadow-md"><i class="fas fa-gift text-amber-500 text-xl"></i></div>
+              <h3 class="title-font text-2xl font-bold text-gray-800">Día de la Madre</h3>
+            </div>
+            <p class="text-gray-600 mb-6">Paquete completo madre e hija con 25% de descuento...</p>
+            <div class="flex justify-between items-center">
+              <span class="text-amber-600 font-bold text-xl">₡40,000 <span class="text-gray-500 line-through text-sm">₡35,000</span></span>
+              <button class="bg-white hover:bg-amber-100 text-amber-600 font-bold py-2 px-6 rounded-full transition">Reservar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-600 mb-4">¿Quieres recibir nuestras promociones directamente en tu correo?</p>
+        <div class="max-w-md mx-auto flex">
+          <input type="email" placeholder="Tu correo electrónico" class="flex-grow px-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-300">
+          <button class="bg-rose-300 hover:bg-rose-400 text-black font-bold py-2 px-6 rounded-r-full transition">Suscribirme</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- Instagram Section -->
+  <section id="instagram" class="py-12 bg-black">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="font-cormorant text-3xl font-bold text-champagne mb-6">
+        Síguenos en Instagram
+      </h2>
+      <p class="text-champagne/70 mb-8">
+        Descubre nuestros últimos diseños, promociones y novedades en 
+        <a href="https://www.instagram.com/nailsbypaobeautycr" 
+           target="_blank" 
+           class="text-pink-400 font-semibold hover:underline">
+           @nailsbypao30
+        </a>
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Post 1 -->
+        <div class="bg-luxury-black p-4 rounded-lg">
+          <img src="https://images.unsplash.com/photo-1604654894610-df66bc0e9452?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Instagram post" class="w-full h-64 object-cover rounded-md mb-4">
+          <p class="text-champagne/80 mb-4">Diseño floral primaveral en uñas naturales</p>
+          <a href="https://www.instagram.com/nailsbypao30/" target="_blank" class="text-rose-300 hover:text-rose-200 transition">Ver en Instagram</a>
+        </div>
+        
+        <!-- Post 2 -->
+        <div class="bg-luxury-black p-4 rounded-lg">
+          <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Instagram post" class="w-full h-64 object-cover rounded-md mb-4">
+          <p class="text-champagne/80 mb-4">French tip moderno con detalles dorados</p>
+          <a href="https://www.instagram.com/nailsbypao30/" target="_blank" class="text-rose-300 hover:text-rose-200 transition">Ver en Instagram</a>
+        </div>
+        
+        <!-- Post 3 -->
+        <div class="bg-luxury-black p-4 rounded-lg">
+          <img src="https://images.unsplash.com/photo-1596468132465-6e6d5fd2eed6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Instagram post" class="w-full h-64 object-cover rounded-md mb-4">
+          <p class="text-champagne/80 mb-4">Uñas de gel con diseño geométrico abstracto</p>
+          <a href="https://www.instagram.com/nailsbypao30/" target="_blank" class="text-rose-300 hover:text-rose-200 transition">Ver en Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20 bg-luxury-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:flex lg:items-start lg:justify-between gap-8">
+        <!-- Info -->
+        <div class="lg:w-1/2 mb-10 lg:mb-0 animate-fade-in">
+          <h2 class="title-font text-3xl md:text-4xl font-bold text-white mb-6">Contacto</h2>
+          <p class="text-gray-300 mb-8 leading-relaxed">Estamos ubicados en el corazón de la ciudad...</p>
+
+          <div class="space-y-6 text-gray-300">
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-rose-400 text-xl mt-1"></i>
+              <div class="ml-4">
+                <h4 class="font-bold text-white">Dirección</h4>
+                <p>Nicoya<br>Guanacaste</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-phone-alt text-rose-400 text-xl mt-1"></i>
+              <div class="ml-4">
+                <h4 class="font-bold text-white">Teléfono</h4>
+                <p>+506 7134-3776</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-envelope text-rose-400 text-xl mt-1"></i>
+              <div class="ml-4">
+                <h4 class="font-bold text-white">Email</h4>
+                <p>nailsbypaobeautycr@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-clock text-rose-400 text-xl mt-1"></i>
+              <div class="ml-4">
+                <h4 class="font-bold text-white">Horario</h4>
+                <p>Lunes a Viernes: 10:00 - 19:00<br>Sábados: 10:00 - 16:00<br>Domingos: Cerrado</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <a href="https://wa.me/50671343776" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition">
+              <i class="fab fa-whatsapp text-xl mr-2"></i> Envíanos un WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- FORMULARIO (Formspree listo + mensajes) -->
+        <div class="lg:w-1/2 animate-fade-in">
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <h3 class="title-font text-2xl font-bold text-gray-800 mb-6">Reserva tu Cita</h3>
+
+            <!-- ✅ Formspree -->
+            <form id="booking-form" action="https://formspree.io/f/mwpneoyl" method="POST">
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
+                <input type="text" id="name" name="name" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+              </div>
+
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
+                <input type="email" id="email" name="email" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+              </div>
+
+              <div class="mb-4">
+                <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono</label>
+                <input type="tel" id="phone" name="phone" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+              </div>
+
+              <div class="mb-4">
+                <label for="service" class="block text-gray-700 font-medium mb-2">Servicio</label>
+                <select id="service" name="service" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+                  <option value="">Selecciona un servicio</option>
+                  <option>Esmaltado Semipermanente</option>
+                  <option>Nivelación Rubber Base</option>
+                  <option>Manicure</option>
+                  <option>Pedi spa</option>
+                  <option>Semi-permanente en pies</option>
+                </select>
+              </div>
+
+              <div class="mb-6">
+                <label for="date" class="block text-gray-700 font-medium mb-2">Fecha y hora</label>
+                <input type="datetime-local" id="date" name="date" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-300">
+              </div>
+
+              <!-- Mensaje de estado -->
+              <p id="form-status" class="hidden text-center text-sm mb-4"></p>
+
+              <button type="submit" id="submit-btn"
+                class="w-full bg-rose-300 hover:bg-rose-400 text-black font-bold py-3 px-4 rounded-full transition duration-300">
+                Confirmar Reservación
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <div class="h-96 w-full">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3927.3675936873396!2d-85.4558769249668!3d10.150745389962538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDA5JzAyLjciTiA4NcKwMjcnMTEuOSJX!5e0!3m2!1ses-419!2scr!4v1756078171635!5m2!1ses-419!2scr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="title-font text-xl font-bold text-rose-300 mb-4">Nails by Pao</h3>
+          <p class="text-gray-400">Especialistas en cuidado y diseño de uñas con los más altos estándares de calidad y profesionalismo.</p>
+        </div>
+        <div>
+          <h4 class="title-font font-bold text-white mb-4">Enlaces Rápidos</h4>
+          <ul class="space-y-2">
+            <li><a href="#inicio" class="text-gray-400 hover:text-rose-300 transition">Inicio</a></li>
+            <li><a href="#sobre-mi" class="text-gray-400 hover:text-rose-300 transition">Sobre Mí</a></li>
+            <li><a href="#servicios" class="text-gray-400 hover:text-rose-300 transition">Servicios</a></li>
+            <li><a href="#galeria" class="text-gray-400 hover:text-rose-300 transition">Galería</a></li>
+            <li><a href="#contacto" class="text-gray-400 hover:text-rose-300 transition">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="title-font font-bold text-white mb-4">Horario</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>Lunes - Viernes: 10:00 - 19:00</li>
+            <li>Sábados: 10:00 - 16:00</li>
+            <li>Domingos: Cerrado</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="title-font font-bold text-white mb-4">Síguenos</h4>
+          <div class="flex space-x-4">
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100092752116687" class="text-gray-400 hover:text-rose-300 transition text-xl"><i class="fab fa-facebook-f"></i></a>
+            <a target="_blank" href="https://www.instagram.com/nailsbypao30/" class="text-gray-400 hover:text-rose-300 transition text-xl"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="https://www.tiktok.com/@nails.by.pao77?_t=ZM-8z8pjrKHjlO&_r=1" class="text-gray-400 hover:text-rose-300 transition text-xl"><i class="fab fa-tiktok"></i></a>
+          </div>
+          <div class="mt-6">
+            <a href="#inicio" class="inline-flex items-center text-rose-300 hover:text-white">
+              Volver arriba <i class="fas fa-arrow-up ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2023 Nails by Pao. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/50671343776" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition z-50" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- MODAL PARA SERVICIOS -->
   <div id="serviceModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="close" onclick="closeServiceModal()">&times;</span>
     <div class="modal-content bg-white rounded-lg p-6 max-w-lg w-full mx-4">
       <h2 id="modalTitle" class="text-2xl font-bold text-luxury-black mb-4"></h2>
       <img id="modalImg" src="" alt="Servicio" class="w-full h-64 object-cover rounded-lg mb-4">
       <p id="modalDescription" class="text-gray-700 mb-4"></p>
-      <p id="modalPrice" class="text-lg font-semibold text-rose-600"></p>
+      <p id="modalPrice" class="text-lg font-semibold text-rose-600 mb-6"></p>
+      <div class="text-center">
+        <a href="#contacto" class="bg-rose-300 hover:bg-rose-400 text-black font-bold py-2 px-6 rounded-full transition">Reservar ahora</a>
+      </div>
     </div>
   </div>
 
+  <!-- Scripts -->
   <script>
-    // Funciones para el modal de servicios
-    function openModal(imageSrc, serviceName) {
-      const modal = document.getElementById('serviceModal');
-      const modalImg = document.getElementById('modalImg');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalDescription = document.getElementById('modalDescription');
-      const modalPrice = document.getElementById('modalPrice');
-      
-      // Configurar el contenido del modal según el servicio
-      modalImg.src = imageSrc;
-      modalImg.alt = serviceName;
-      modalTitle.textContent = serviceName;
-      
-      // Descripciones específicas para cada servicio
-      const descriptions = {
-        'Gel X': 'Extensiones de gel innovadoras que se adaptan perfectamente a tu uña natural. Proporcionan una apariencia natural y son más ligeras y resistentes que las extensiones tradicionales.',
-        'Nivelación Rubber Base': 'Técnica revolucionaria que fortalece tus uñas naturales y crea una superficie perfectamente lisa para el esmaltado. Ideal para uñas débiles o quebradizas.',
-        'Pedicure Spa': 'Tratamiento de lujo que incluye limado, cuidado de cutículas, exfoliación, hidratación profunda y masaje relajante. Terminamos con un esmaltado perfecto.',
-        'Semi Permanente': 'Esmalte de alta calidad que dura hasta 3 semanas manteniendo su brillo intacto. Aplicamos productos que no dañan tus uñas naturales.'
-      };
-      
-      const prices = {
-        'Gel X': 'Desde ₡18,000',
-        'Nivelación Rubber Base': 'Desde ₡12,000',
-        'Pedicure Spa': 'Desde ₡18,000',
-        'Semi Permanente': 'Desde ₡8,000'
-      };
-      
-      modalDescription.textContent = descriptions[serviceName] || 'Servicio profesional de uñas con los más altos estándares de calidad.';
-      modalPrice.textContent = prices[serviceName] || 'Precio disponible al consultar';
-      
-      // Mostrar el modal
-      modal.style.display = 'flex';
-    }
-
-    function closeModal() {
-      document.getElementById('serviceModal').style.display = 'none';
-    }
-
-    // Cerrar el modal al hacer clic fuera del contenido
-    window.onclick = function(event) {
-      const modal = document.getElementById('serviceModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    };
-
-    // El resto del código JavaScript se mantiene igual
     // Toggle móvil
     const mobileBtn = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -381,7 +630,7 @@
       }
     });
 
-    // Envío AJAX a Formspree
+    // ✅ Envío AJAX a Formspree con feedback en la misma página
     const form = document.getElementById('booking-form');
     const statusEl = document.getElementById('form-status');
     const submitBtn = document.getElementById('submit-btn');
@@ -419,6 +668,35 @@
         }
       });
     }
+
+    // Funciones para el modal de servicios
+    function openServiceModal(title, imageSrc, description, price) {
+      const modal = document.getElementById('serviceModal');
+      const modalImg = document.getElementById('modalImg');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
+      const modalPrice = document.getElementById('modalPrice');
+      
+      modalImg.src = imageSrc;
+      modalImg.alt = title;
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      modalPrice.textContent = `Precio: ${price}`;
+      
+      modal.style.display = 'flex';
+    }
+
+    function closeServiceModal() {
+      document.getElementById('serviceModal').style.display = 'none';
+    }
+
+    // Cerrar el modal al hacer clic fuera del contenido
+    window.onclick = function(event) {
+      const modal = document.getElementById('serviceModal');
+      if (event.target === modal) {
+        closeServiceModal();
+      }
+    };
   </script>
 </body>
 </html>
