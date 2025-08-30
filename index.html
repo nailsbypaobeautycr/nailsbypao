@@ -4,111 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nails by Pao | Nails Studio Salón</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
   <style>
-    .text-glow { text-shadow: 0 0 8px rgba(255,255,255,0.6); }
-    .modal { display:none; position:fixed; z-index:50; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center; }
-    .modal img { max-height:90%; max-width:90%; border-radius:8px; }
+    body { background-color: #0e0e0e; color: #f5f5f5; }
+    .bg-luxury-black { background-color: #0e0e0e; }
+    .text-champagne { color: #f8e5c9; }
+    .border-champagne { border-color: #f8e5c9; }
+    .btn-glow { transition: all 0.3s ease; }
+    .btn-glow:hover { box-shadow: 0 0 10px #f8e5c9; }
   </style>
 </head>
-<body class="bg-luxury-black text-white">
+<body class="font-montserrat">
 
   <!-- HEADER -->
-  <header class="bg-luxury-black shadow-md fixed w-full z-40">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+  <header class="bg-luxury-black shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center">
         <img src="imgs/logo.png" alt="Logo Nails by Pao" class="h-12 w-12 rounded-full mr-3 border-2 border-champagne shadow-lg">
         <img src="imgs/logo-text.png" alt="Nails by Pao" class="h-10">
       </div>
-      <nav class="hidden md:flex space-x-6 font-montserrat">
-        <a href="#servicios" class="hover:text-champagne">Servicios</a>
-        <a href="#instagram" class="hover:text-champagne">Instagram</a>
-        <a href="#contacto" class="hover:text-champagne">Contacto</a>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#servicios" class="text-champagne hover:text-white">Servicios</a>
+        <a href="#instagram" class="text-champagne hover:text-white">Instagram</a>
+        <a href="#contacto" class="text-champagne hover:text-white">Contacto</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="relative bg-cover bg-center h-screen" style="background-image:url('imgs/hero.jpg')">
-    <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
-      <div class="text-center">
-        <h1 class="font-cormorant text-5xl md:text-6xl text-champagne mb-6">Tu Belleza, Tu Estilo</h1>
-        <p class="font-montserrat text-lg text-gray-200 mb-8">Manicura, pedicura y spa en Nicoya, Guanacaste</p>
-        <a href="#contacto" class="bg-champagne text-black font-bold py-3 px-8 rounded-full transition hover:bg-champagne/80">Reserva tu cita</a>
-      </div>
-    </div>
+  <section class="relative bg-luxury-black text-center py-32">
+    <h1 class="text-5xl md:text-6xl font-bold text-champagne mb-6">Belleza en Cada Detalle</h1>
+    <p class="text-lg text-gray-300 mb-10">Uñas diseñadas para brillar con elegancia y estilo.</p>
+    <a href="#servicios" class="px-8 py-4 bg-champagne text-black font-bold rounded btn-glow">Explorar Servicios</a>
   </section>
 
   <!-- SERVICIOS -->
   <section id="servicios" class="py-20 bg-luxury-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-center title-font text-3xl md:text-4xl font-bold text-champagne mb-16">Nuestros Servicios</h2>
+      <h2 class="text-4xl font-bold text-center text-champagne mb-16">Nuestros Servicios</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- CARD EJEMPLO -->
-        <div class="service-card bg-luxury-black rounded-sm overflow-hidden transition duration-300 hover:shadow-lg border border-champagne/10">
-          <div class="h-64 overflow-hidden relative cursor-pointer" onclick="openModal('imgs/Pavid.png')">
+        <!-- CARD -->
+        <div class="service-card bg-luxury-black border border-champagne/10 rounded overflow-hidden">
+          <div class="h-64 relative cursor-pointer" onclick="openModal('imgs/Pavid.png','Gel X','Extensiones de gel innovadoras, ligeras y resistentes.')">
             <img src="imgs/Pavid.png" alt="Gel X" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
           </div>
-          <div class="p-8">
-            <h3 class="font-cormorant text-2xl font-bold text-champagne mb-4">Gel X</h3>
-            <p class="font-montserrat text-champagne/70 mb-6">Extensiones de gel innovadoras, ligeras y resistentes, que se adaptan perfectamente a tu uña natural.</p>
-            <div class="flex justify-between items-center pt-4 border-t border-champagne/10">
-              <span class="font-cormorant text-champagne font-bold text-lg">Desde ₡18,000</span>
-              <button onclick="openModal('imgs/Pavid.png')" class="text-xs font-montserrat bg-champagne/10 hover:bg-champagne/20 text-champagne py-2 px-4 rounded-sm border border-champagne/20 transition">DETALLES</button>
-            </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-champagne mb-2">Gel X</h3>
+            <p class="text-gray-400 mb-4">Extensiones de gel innovadoras, ligeras y resistentes, que se adaptan perfectamente a tu uña natural.</p>
+            <span class="font-bold text-champagne">Desde ₡18,000</span>
           </div>
         </div>
 
-        <!-- DUPLICAR ESTE BLOQUE PARA CADA SERVICIO -->
-        <!-- ... más servicios aquí ... -->
+        <!-- Más cards (repite para cada servicio) -->
+        <div class="service-card bg-luxury-black border border-champagne/10 rounded overflow-hidden">
+          <div class="h-64 relative cursor-pointer" onclick="openModal('imgs/Manicure.png','Manicure Clásico','Cuidado de uñas con limpieza, limado y esmaltado.')">
+            <img src="imgs/Manicure.png" alt="Manicure" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-champagne mb-2">Manicure Clásico</h3>
+            <p class="text-gray-400 mb-4">Cuidado completo de uñas con limpieza, limado y esmaltado básico.</p>
+            <span class="font-bold text-champagne">₡10,000</span>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
 
   <!-- INSTAGRAM -->
-  <section id="instagram" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-center text-3xl md:text-4xl font-bold text-gray-800 mb-12">Síguenos en Instagram</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <a href="#" target="_blank"><img src="imgs/insta1.jpg" alt="Instagram Nails by Pao" class="rounded-lg shadow-md hover:opacity-80"></a>
-        <a href="#" target="_blank"><img src="imgs/insta2.jpg" alt="Instagram Nails by Pao" class="rounded-lg shadow-md hover:opacity-80"></a>
-        <a href="#" target="_blank"><img src="imgs/insta3.jpg" alt="Instagram Nails by Pao" class="rounded-lg shadow-md hover:opacity-80"></a>
-        <a href="#" target="_blank"><img src="imgs/insta4.jpg" alt="Instagram Nails by Pao" class="rounded-lg shadow-md hover:opacity-80"></a>
-      </div>
-    </div>
+  <section id="instagram" class="py-20 bg-white text-center">
+    <h2 class="text-4xl font-bold text-gray-800 mb-8">Síguenos en Instagram</h2>
+    <p class="text-gray-600 mb-12">Descubre más diseños y novedades en nuestro perfil.</p>
+    <a href="https://instagram.com/nailsbypaocr" target="_blank" class="px-8 py-4 bg-pink-500 text-white font-bold rounded hover:bg-pink-600 transition">Ver en Instagram</a>
   </section>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="py-20 bg-luxury-black text-white">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-champagne mb-6">Reserva tu Cita</h2>
-      <p class="text-gray-300 mb-6">Agenda tu manicure, pedicure o tratamiento en Nails by Pao.</p>
-      <a href="https://wa.me/50671343776" target="_blank" class="bg-champagne text-black font-bold py-3 px-8 rounded-full transition hover:bg-champagne/80">Agendar por WhatsApp</a>
-    </div>
+  <section id="contacto" class="py-20 bg-luxury-black text-center">
+    <h2 class="text-4xl font-bold text-champagne mb-8">Contáctanos</h2>
+    <p class="text-gray-400 mb-4">Nicoya, Guanacaste • Tel: <a href="tel:+50671343776" class="underline">7134-3776</a></p>
+    <p class="text-gray-400">WhatsApp: <a href="https://wa.me/50671343776" target="_blank" class="underline">Chatear ahora</a></p>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-black py-8 text-center text-gray-400">
-    <p>&copy; 2025 Nails by Pao. Todos los derechos reservados.</p>
+  <footer class="bg-black py-8 text-center text-gray-500 text-sm">
+    <p>© 2025 Nails by Pao. Todos los derechos reservados.</p>
   </footer>
 
   <!-- MODAL -->
-  <div id="imgModal" class="modal flex">
-    <span onclick="closeModal()" class="absolute top-6 right-10 text-white text-4xl cursor-pointer">&times;</span>
-    <img id="modalImg" src="" alt="Servicio">
+  <div id="imageModal" class="fixed inset-0 bg-black/80 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg max-w-lg p-6 relative text-black">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-black"><i class="fas fa-times"></i></button>
+      <img id="modalImg" src="" alt="Detalle" class="w-full h-64 object-cover rounded mb-4">
+      <h3 id="modalTitle" class="text-2xl font-bold mb-2"></h3>
+      <p id="modalDesc" class="text-gray-700"></p>
+    </div>
   </div>
 
   <script>
-    function openModal(src) {
-      document.getElementById('imgModal').style.display = 'flex';
-      document.getElementById('modalImg').src = src;
+    function openModal(img, title, desc) {
+      document.getElementById('modalImg').src = img;
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = desc;
+      document.getElementById('imageModal').classList.remove('hidden');
     }
     function closeModal() {
-      document.getElementById('imgModal').style.display = 'none';
+      document.getElementById('imageModal').classList.add('hidden');
     }
   </script>
 </body>
