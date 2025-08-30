@@ -61,26 +61,6 @@
     .text-glow { text-shadow: 0 0 6px rgba(243,229,216,.7), 0 0 12px rgba(243,229,216,.5); }
   </style>
 </head>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nails by Pao</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Ajuste para que las imágenes en el modal se vean completas -->
-    <style>
-        .modal img, 
-        .lightbox img {
-            max-width: 90vw;   /* No más ancho que el 90% de la ventana */
-            max-height: 90vh;  /* No más alto que el 90% de la ventana */
-            object-fit: contain; /* Mantener proporción */
-            display: block;
-            margin: auto;
-        }
-    </style>
-</head>
-  
 <body class="bg-white text-gray-800">
 
   <!-- NAV -->
@@ -187,18 +167,16 @@
         <!-- Cards (igual que tu versión) -->
          <!-- CARD EJEMPLO -->
         <div class="service-card bg-luxury-black rounded-sm overflow-hidden transition duration-300 hover:shadow-lg border border-champagne/10">
-          <div class="h-48 bg-cover bg-center" style="background-image: url('imgs/Pavid.png');"></div>
+          <div class="h-64 overflow-hidden relative cursor-pointer" onclick="openModal('imgs/Pavid.png')">
             <img src="imgs/Pavid.png" alt="Gel X" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/80 to-transparent"></div>
           </div>
-          <div class="p-6">
+          <div class="p-8">
             <h3 class="font-cormorant text-2xl font-bold text-champagne mb-4">Gel X</h3>
             <p class="font-montserrat text-champagne/70 mb-6">Extensiones de gel innovadoras, ligeras y resistentes, que se adaptan perfectamente a tu uña natural.</p>
             <div class="flex justify-between items-center pt-4 border-t border-champagne/10">
               <span class="font-cormorant text-champagne font-bold text-lg">Desde ₡18,000</span>
-              <button class="view-artwork bg-red-700 hover:bg-red-800 text-white py-2 px-4 rounded transition duration-300" data-image="imgs/Pavid.png" data-title="Gel X" data-description="Extensiones de gel innovadoras, ligeras y resistentes, que se adaptan perfectamente a tu uña natural.">
-                DETALLES
-              </button>
+              <button onclick="openModal('imgs/Pavid.png')" class="text-xs font-montserrat bg-champagne/10 hover:bg-champagne/20 text-champagne py-2 px-4 rounded-sm border border-champagne/20 transition">DETALLES</button>
             </div>
           </div>
         </div>
@@ -630,11 +608,24 @@
     }
   </script>
 
+ <!-- MODAL -->
+  <div id="imgModal" class="modal flex">
+    <span onclick="closeModal()" class="absolute top-6 right-10 text-white text-4xl cursor-pointer">&times;</span>
+    <img id="modalImg" src="" alt="Servicio">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('imgModal').style.display = 'flex';
+      document.getElementById('modalImg').src = src;
+    }
+    function closeModal() {
+      document.getElementById('imgModal').style.display = 'none';
+    }
+  </script> 
+  
 </body>
 </html>
-
-
-
 
 
 
